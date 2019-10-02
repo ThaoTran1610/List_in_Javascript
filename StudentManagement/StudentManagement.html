@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>changeImage</title>
+	<p id="output"></p>
+</head>
+<body>
+	<script type="text/javascript">
+		var students=[];
+			fetch('file.txt')
+		  	.then(response => response.text())
+		  	.then(text => {
+		  		console.log(text);
+		  		// document.getElementById("output").innerHTML = text.replace(/\n/g,'<br/>');	
+
+		  		var array = text.split("\n");
+		  		
+
+		  		for (let i=0; i<array.length; i++) {
+		  			let arrayItem = array[i].split(" ");
+
+
+		  			let student = {name: arrayItem[0], score: arrayItem[1]};
+		  			console.log(student);
+
+		  			
+
+		  		}
+		  		students.push(student);
+		  		console.log(students);
+
+		  		  	
+		  		})
+		  	document.getElementById("output").innerHTML=students;
+
+
+
+	</script>
+
+</body>
+</html>
